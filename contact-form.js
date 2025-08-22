@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Create WhatsApp URL (using the same number from the original button)
                 const whatsappUrl = `https://wa.me/6281181150666?text=${encodedMessage}`;
                 
-                // Open WhatsApp
-                window.open(whatsappUrl, '_blank');
+                // Open WhatsApp app directly on mobile
+                window.location.href = whatsappUrl;
                 
                 // Optional: Reset form after successful submission
                 setTimeout(() => {
