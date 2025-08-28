@@ -19,8 +19,8 @@ A premium residential website showcasing luxury Mediterranean-inspired homes in 
 ### 🏘️ Property Showcase
 - **Interactive Image Carousel** for property viewing
 - **2 Property Types**:
-  - **Type Kana**: 2BR/2BA, 50m², Starting from 690 Million IDR
-  - **Type Keva**: 3BR/3BA, 68m², Starting from 830 Million IDR
+  - **Type Kana**: 2BR/2BA, 50m², Starting from 695 Million IDR
+  - **Type Heva**: 3BR/3BA, 68m², Starting from 836 Million IDR
 - **High-quality renders** and floor plans
 - **Premium location mapping** with nearby facilities
 

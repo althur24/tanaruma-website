@@ -92,8 +92,8 @@ public_html/
 - **Konsep**: Contemporary Tropical Estate
 - **Lokasi**: Jl. H. Minggu No.9B, RT.002/RW.05, Tengah, Kec. Cibinong, Kabupaten Bogor, Jawa Barat 16914
 - **Tipe Rumah**: 
-  - Type Kana (2BR/2BA, 50m², 690 Jutaan)
-  - Type Keva (3BR/3BA, 68m², 830 Jutaan)
+  - Type Kana (2BR/2BA, 50m², 695 Jutaan)
+  - Type Heva (3BR/3BA, 68m², 836 Jutaan)
 
 ## ✅ SELESAI!
 Website TanaRuma siap online dan dapat diakses publik! 🎉
