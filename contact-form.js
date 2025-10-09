@@ -37,11 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Track Lead - TR event on Facebook Pixel
             if (typeof fbq !== 'undefined') {
-                fbq('trackCustom', 'Lead - TR', {
-                    'name': name,
-                    'property_type': interest,
-                    'phone': whatsapp
-                });
+                fbq('trackCustom', 'Lead - TR');
                 console.log('Facebook Pixel Lead - TR event tracked');
             }
             
