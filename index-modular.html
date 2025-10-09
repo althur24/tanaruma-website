@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TBG9JT84');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1107138560461211');
+    fbq('track', 'PageView');
+    
+    // Track LPV TR event when page loads
+    window.addEventListener('load', function() {
+        fbq('trackCustom', 'LPV TR');
+    });
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1107138560461211&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+    
+    <title>TanaRuma Residence - Home for Every Dream</title>
+    <meta name="description" content="TanaRuma Residence kawasan hunian modern bergaya Mediterranean minimalis untuk generasi modern. DP mulai 5 juta, 100% bebas PPN.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Sinhala+MN&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/LOGO/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="assets/LOGO/Tangkapan_Layar_2025-08-07_pukul_16.27.24-removebg-preview.png" as="image">
+    <link rel="prefetch" href="sections/essence.html">
+    <link rel="prefetch" href="sections/living-options.html">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBG9JT84"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- TanaRuma Loading Screen Controller -->
+    <script src="loading-controller.js"></script>
+
+    <!-- Header Include -->
+    <div id="header-include"></div>
+
+    <main>
+        <!-- Hero Section - Inline for critical above-the-fold content -->
+        <section class="hero" id="home">
+            <div class="hero__bg">
+                <div class="hero__overlay"></div>
+            </div>
+            
+            <div class="hero__content container">
+                <div class="hero__data">
+                    <h1 class="hero__title">
+                        Home for Every Dream
+                        <span class="hero__hashtag">#Punyarumahitukeren</span>
+                    </h1>
+                    <p class="hero__description">
+                        Temukan rumah yang bukan hanya tempat tinggal, tapi representasi diri Anda.
+                    </p>
+                    
+                    <div class="hero__buttons">
+                        <a href="#living" class="btn btn--primary glass">
+                            Explore Properties
+                        </a>
+                        <a href="https://wa.me/6281234567890" class="btn btn--outline glass">
+                            Contact Sales
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Sections - Loaded via module-loader.js -->
+        <div id="essence-section"></div>
+        <div id="living-section"></div>
+        <div id="clubhouse-section"></div>
+        <div id="features-section"></div>
+        <div id="location-section"></div>
+        <div id="contact-section"></div>
+    </main>
+
+    <!-- Footer Include -->
+    <div id="footer-include"></div>
+
+    <!-- Scripts -->
+    
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Module Loader - Loads all sections dynamically -->
+    <script src="module-loader.js"></script>
+    
+    <!-- Main JavaScript - Wait for modules to load -->
+    <script>
+        document.addEventListener('modulesLoaded', function() {
+            // Load main script after modules are ready
+            const script = document.createElement('script');
+            script.src = 'script.js';
+            script.onload = function() {
+                console.log('✓ Main script loaded and initialized');
+                
+                // Load contact form script after main script
+                const contactScript = document.createElement('script');
+                contactScript.src = 'contact-form.js';
+                contactScript.onload = function() {
+                    console.log('✓ Contact form script loaded and ready');
+                };
+                document.body.appendChild(contactScript);
+            };
+            document.body.appendChild(script);
+        });
+    </script>
+</body>
+</html>
