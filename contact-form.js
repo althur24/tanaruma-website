@@ -40,37 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
             formSuccess.classList.add('active');
             loadingSpinner.classList.add('show');
             console.log('Loading spinner should be visible now');
+            console.log('Success message "Terima Kasih" is now displayed');
             
-            // Track Lead TR event on Facebook Pixel with improved handling
-            console.log('Attempting to track Facebook Pixel Lead TR event...');
-            
-            function trackLeadEvent() {
-                try {
-                    if (typeof fbq !== 'undefined' && fbq.loaded) {
-                        fbq('trackCustom', 'Lead TR');
-                        console.log('✅ Facebook Pixel Lead TR event successfully tracked!');
-                        return true;
-                    } else if (typeof fbq !== 'undefined') {
-                        console.log('⚠️ Facebook Pixel found but not fully loaded, retrying...');
-                        return false;
-                    } else {
-                        console.error('❌ Facebook Pixel (fbq) not found!');
-                        return true; // Don't retry if fbq doesn't exist
-                    }
-                } catch (error) {
-                    console.error('❌ Error tracking Facebook Pixel event:', error);
-                    return true; // Don't retry on error
-                }
-            }
-            
-            // Try to track immediately
-            let tracked = trackLeadEvent();
-            
-            // If not tracked, retry after short delay
-            if (!tracked) {
-                setTimeout(() => {
-                    trackLeadEvent();
-                }, 500);
+            // Trigger Lead TR right after success message appears
+            if (typeof fbq !== 'undefined') {
+                fbq('trackCustom', 'Lead TR');
+                console.log('✅ Facebook Pixel Lead TR event tracked after success message displayed');
+            } else {
+                console.error('❌ Facebook Pixel (fbq) not found!');
             }
             
             // Wait longer before redirect to ensure event is sent
