@@ -35,6 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
             
             console.log('Validation passed, showing success message...');
             
+            // Track Lead - TR event on Facebook Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('trackCustom', 'Lead - TR', {
+                    'name': name,
+                    'property_type': interest,
+                    'phone': whatsapp
+                });
+                console.log('Facebook Pixel Lead - TR event tracked');
+            }
+            
             // Hide form and show success message
             formStep.classList.remove('active');
             formSuccess.classList.add('active');
