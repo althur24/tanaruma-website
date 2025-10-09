@@ -41,6 +41,32 @@
     /></noscript>
     <!-- End Facebook Pixel Code -->
     
+    <!-- Simple Lead TR Trigger when Success Message Shows -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Setting up simple Lead TR trigger...');
+        const formSuccess = document.getElementById('form-success');
+        if (formSuccess) {
+            console.log('Found form-success element, setting up observer...');
+            const observer = new MutationObserver(function() {
+                if (formSuccess.classList.contains('active')) {
+                    console.log('Success message became active - triggering Lead TR');
+                    if (typeof fbq !== 'undefined') {
+                        fbq('trackCustom', 'Lead TR');
+                        console.log('✅ Lead TR triggered when Terima Kasih appears');
+                    } else {
+                        console.error('❌ fbq not found when trying to trigger Lead TR');
+                    }
+                }
+            });
+            observer.observe(formSuccess, { attributes: true, attributeFilter: ['class'] });
+            console.log('Observer set up successfully');
+        } else {
+            console.log('form-success element not found');
+        }
+    });
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TanaRuma Residence | Hunian 2 Lantai Dekat CCM</title>
