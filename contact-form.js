@@ -41,14 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             loadingSpinner.classList.add('show');
             console.log('Loading spinner should be visible now');
             console.log('Success message "Terima Kasih" is now displayed');
-            
-            // Trigger Lead TR right after success message appears
-            if (typeof fbq !== 'undefined') {
-                fbq('trackCustom', 'Lead TR');
-                console.log('✅ Facebook Pixel Lead TR event tracked after success message displayed');
-            } else {
-                console.error('❌ Facebook Pixel (fbq) not found!');
-            }
+            console.log('Lead TR tracking handled by HTML inline script');
             
             // Wait longer before redirect to ensure event is sent
             console.log('Starting 2 second countdown before WhatsApp redirect...');
