@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             console.log('Validation passed, showing success message...');
             
-            // Track Lead - TR event on Facebook Pixel
+            // Track Lead TR event on Facebook Pixel
             if (typeof fbq !== 'undefined') {
-                fbq('trackCustom', 'Lead - TR');
-                console.log('Facebook Pixel Lead - TR event tracked');
+                fbq('trackCustom', 'Lead TR');
+                console.log('Facebook Pixel Lead TR event tracked');
             }
             
             // Hide form and show success message
