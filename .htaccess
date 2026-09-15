@@ -1,0 +1,3 @@
+# Force UTF-8 charset for all text content
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .css .js .html .htm .svg .json
