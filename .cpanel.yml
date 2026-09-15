@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/public_html
+    - /bin/cp -R assets $DEPLOYPATH/
+    - /bin/cp index.html $DEPLOYPATH/
+    - /bin/cp styles.css $DEPLOYPATH/
+    - /bin/cp script.js $DEPLOYPATH/
+    - /bin/cp contact-form.js $DEPLOYPATH/
+    - /bin/cp loading-controller.js $DEPLOYPATH/
