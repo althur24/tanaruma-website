@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=$HOME/public_html
-    - /bin/cp .htaccess $DEPLOYPATH/
+    - /bin/cp htaccess-utf8.conf $DEPLOYPATH/.htaccess
     - /bin/cp -R assets $DEPLOYPATH/
     - /bin/cp index.html $DEPLOYPATH/
     - /bin/cp styles.css $DEPLOYPATH/
