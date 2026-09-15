@@ -8,6 +8,17 @@ function initializeApp() {
         // Mobile-optimized AOS settings
         const isMobile = window.innerWidth <= 768;
         
+        // On mobile, convert horizontal animations to fade-up to prevent
+        // horizontal overflow (page shifting left/right while scrolling)
+        if (isMobile) {
+            const horizontalAnimations = ['fade-left', 'fade-right', 'slide-left', 'slide-right', 'flip-left', 'flip-right'];
+            document.querySelectorAll('[data-aos]').forEach(el => {
+                if (horizontalAnimations.includes(el.getAttribute('data-aos'))) {
+                    el.setAttribute('data-aos', 'fade-up');
+                }
+            });
+        }
+        
         AOS.init({
             duration: isMobile ? 600 : 1000, // Faster animations on mobile
             easing: 'ease-in-out-cubic',
@@ -56,6 +67,15 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('modulesLoaded', function() {
     initializeApp();
 });
+
+// Late-load guard for the modular version:
+// index-modular.html injects this script AFTER modulesLoaded has already fired,
+// so the event listener above would never trigger. Detect that case and init now.
+if (document.readyState !== 'loading' && document.getElementById('header-include')) {
+    if (window.moduleLoader && window.moduleLoader.isFullyLoaded()) {
+        initializeApp();
+    }
+}
 
 // Loading screen integration
 document.addEventListener('loadingComplete', function() {
@@ -333,19 +353,28 @@ function initParallaxEffects() {
     const heroVideo = document.querySelector('.hero__video');
     const heroContent = document.querySelector('.hero__content');
     
+    let ticking = false;
+    
     window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        const rate = scrolled * -0.5;
-        const contentRate = scrolled * -0.3;
-        
-        if (heroVideo) {
-            heroVideo.style.transform = `translate3d(0, ${rate}px, 0)`;
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.scrollY;
+                const rate = scrolled * -0.5;
+                const contentRate = scrolled * -0.3;
+                
+                if (heroVideo) {
+                    heroVideo.style.transform = `translate3d(0, ${rate}px, 0)`;
+                }
+                
+                if (heroContent) {
+                    heroContent.style.transform = `translate3d(0, ${contentRate}px, 0)`;
+                }
+                
+                ticking = false;
+            });
+            ticking = true;
         }
-        
-        if (heroContent) {
-            heroContent.style.transform = `translate3d(0, ${contentRate}px, 0)`;
-        }
-    });
+    }, { passive: true });
 }
 
 // Enhanced button interactions
